@@ -4,7 +4,7 @@ namespace app\modules\admin\controllers;
 
 use yii\web\Controller;
 use Yii;
-use app\models\LoginForm;
+use app\modules\admin\models\LoginForm;
 
 class DefaultController extends Controller
 {
