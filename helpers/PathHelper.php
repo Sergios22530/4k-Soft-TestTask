@@ -20,7 +20,7 @@ class PathHelper
     public static function uploadPath($folder = '', $uploadFolder = null)
     {
         $uploadFolder = is_null($uploadFolder) ? self::$UPLOAD_FOLDER : $uploadFolder;
-        $path = Yii::getAlias('@web/' . $uploadFolder);
+        $path = Yii::getAlias('@app/web/' . $uploadFolder);
         if (!empty($folder)) {
             $path .= '/' . trim($folder, '/');
             if (!FileHelper::createDirectory(FileHelper::normalizePath($path))) {
