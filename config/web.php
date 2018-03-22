@@ -55,6 +55,7 @@ $config = [
             'enableStrictParsing' => false,
             'baseUrl' => $baseUrl,
             'rules' => [
+                '/' => 'site/index',
                 '<module:[\wd-]+>/<controller:[\wd-]+>/<action:[\wd-]+>/<id:\d+>' => '<module>/<controller>/<action>',
                 '<module:[\wd-]+>/<controller:[\wd-]+>/<action:[\wd-]+>' => '<module>/<controller>/<action>'
             ]
