@@ -1,4 +1,7 @@
 <?php
+
+use dmstr\helpers\AdminLteHelper;
+use xj\bootbox\BootboxAsset;
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
@@ -15,7 +18,11 @@ if (Yii::$app->controller->action->id === 'login') {
         ['content' => $content]
     );
 } else {
+    if (class_exists('app\modules\admin\assets\AppAsset')) {
+        app\modules\admin\assets\AppAsset::register($this);
+    }
     dmstr\web\AdminLteAsset::register($this);
+    BootboxAsset::registerWithOverride($this);
 
     $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
     ?>
@@ -29,7 +36,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>
-    <body class="skin-blue sidebar-mini">
+    <body class="<?= AdminLteHelper::skinClass() ?> sidebar-mini">
     <?php $this->beginBody() ?>
     <div class="wrapper">
 

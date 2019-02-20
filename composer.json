@@ -19,7 +19,16 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "dmstr/yii2-adminlte-asset": "2.4.4",
-        "sergios/yii2-upload-file": "dev-master"
+        "sergios/yii2-upload-file": "dev-master",
+        "creocoder/yii2-translateable": "^1.0",
+        "xj/yii2-bootbox-widget": "^1.0",
+        "skeeks/yii2-assets-auto-compress": "*",
+        "kotchuprik/yii2-sortable-widgets": "^2.0",
+        "kartik-v/yii2-dynagrid": "@dev",
+        "vova07/yii2-imperavi-widget": "*",
+        "kartik-v/yii2-widget-datetimepicker": "*",
+        "codemix/yii2-localeurls": "^1.7",
+        "mihaildev/yii2-elfinder": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "*",

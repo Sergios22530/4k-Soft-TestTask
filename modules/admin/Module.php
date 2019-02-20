@@ -15,7 +15,7 @@ class Module extends \yii\base\Module
     {
         return [
             'access' => [
-                'class' => AccessControl::className(),
+                'class' => AccessControl::class,
                 'rules' => [
                     [
                         'actions' => ['login', 'error'],
@@ -36,7 +36,7 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
+        Yii::$app->language = 'uk-UA';
         // custom initialization code goes here
         Yii::$app->session->setName('_adminSessionId');
     }
