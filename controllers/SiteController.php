@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Tree;
 use yii\web\Controller;
 use app\components\TreeControl;
+use app\components\TreeCreator;
 
 class SiteController extends Controller
 {

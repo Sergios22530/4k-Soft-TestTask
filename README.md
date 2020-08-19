@@ -1,61 +1,43 @@
-Yii 2 Basic Project Template
-============================
-
-Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-rapidly creating small projects.
-
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
-
-DIRECTORY STRUCTURE
--------------------
-
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
-
-
-
-REQUIREMENTS
-------------
-
-The minimum requirement by this project template that your Web server supports PHP 5.4.0.
-
-
-INSTALLATION
-------------
-
-### Install from an Archive File
-
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `basic` that is directly under the Web root.
-
-Set cookie validation key in `config/web.php` file to some random secret string:
-
-```php
-'request' => [
-    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-    'cookieValidationKey' => '<secret random string goes here>',
-],
+Обязательно
+-----
+```
+После развертывания проекта на Yii2 (смотри ниже - YII2 INSTALLATION) обязательно нужно запустить миграцию бази - php yii/migrate/up. 
+С миграцией будет создана root ячейка (Для корректной работы ее желательно не удалять). 
 ```
 
-You can then access the application through the following URL:
+Построения бинара
+------------
+```php
+use app\components\TreeCreator;
+
+/** @return bool */
+(new TreeCreator(1, 1))->createNode(); //создание бинара; 
+//1 параметр в кострукторе - идентификатор родителя; 
+//2 параметр в кострукторе - позиция ячейки относительно родителя  
+```
+Получение по id ячейки все вышестоящие и нижестоящие ячейки
+------------
+```php
+use app\components\TreeControl;
+
+$treeControl = new TreeControl();
+
+/** @return  array|string|null */
+$treeControl->getChildNodes(2); //Получение по id ячейки все нижестоящие ячейки; Возвращает массив; 
+
+/** @return  array|string|null */
+$treeControl->getParentNodes(10); //Получение по id ячейки все вышестоящие ячейки; Возвращает массив; 
+
+```
+
+YII2 INSTALLATION
+------------
 
 ~~~
-http://localhost/basic/web/
+1. git clone https://github.com/Sergios22530/UkrTech-TestTask.git .
+2. composer install
+3. Заходим в config/db.php - меняем конфигурацию базы данных на свою 
+4. php yii migrate/up - запускаем миграцию базы
 ~~~
 
 
