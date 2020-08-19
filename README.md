@@ -1,3 +1,6 @@
+# ТЗ
+[тз](web/files/new.test-back.pdf)
+
 Обязательно
 -----
 ```
@@ -28,6 +31,14 @@ $treeControl->getChildNodes(2); //Получение по id ячейки все
 /** @return  array|string|null */
 $treeControl->getParentNodes(10); //Получение по id ячейки все вышестоящие ячейки; Возвращает массив; 
 
+```
+Автоматически заполнить бинар до 5 уровня, включительно, слева направо, сверху вниз
+------------
+```php
+use app\components\TreeControl;
+
+/** @return  array|string|null */
+(new TreeControl())->autoCompleteTree(); //Возвращает массив заполненного дерева;
 ```
 
 YII2 INSTALLATION

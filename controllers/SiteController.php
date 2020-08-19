@@ -26,7 +26,7 @@ class SiteController extends Controller
 //        $treeControl->getChildNodes(182); //- get node children
 //        $treeControl->getParentNodes(134); // - get node parents
 
-//        (new TreeControl())->autocompleteTree(); //TODO redevelop method!!!!!
+//        (new TreeControl())->autoCompleteTree(); //autocomplete tree
         return $this->render('index', ['tree' => Tree::getTree()]);
     }
 }
