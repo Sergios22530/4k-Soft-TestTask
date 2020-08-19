@@ -1,7 +1,5 @@
 <?php
 
-use app\models\AnalyticsScript;
-
 
 /** @var $this \yii\web\View */
 /* @var $content string */
@@ -9,7 +7,6 @@ use app\models\AnalyticsScript;
 <body class="<?= (isset($this->context->bodyClass) ? $this->context->bodyClass : '') ?>">
 
 <div class="main-grid-wrapper">
-    <?php AnalyticsScript::beginBody(); ?>
 
     <?php $this->beginBody() ?>
 
@@ -19,13 +16,7 @@ use app\models\AnalyticsScript;
         <?= $content ?>
     </div>
 
-    <?php if ($this->context->footerAlias): ?>
-        <?= $this->render($this->context->footerAlias) ?>
-    <?php endif; ?>
-
     <?php $this->endBody() ?>
-
-    <?php AnalyticsScript::endBody(); ?>
 </div>
 
 </body>

@@ -3,7 +3,6 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\models\AnalyticsScript;
 use yii\helpers\Html;
 use app\assets\AppAsset;
 
@@ -18,7 +17,6 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php AnalyticsScript::head(); ?>
 </head>
 <?= $this->render('//layouts/templates/body', ['content' => $content]) ?>
 </html>

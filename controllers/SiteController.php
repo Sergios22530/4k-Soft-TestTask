@@ -2,9 +2,11 @@
 
 namespace app\controllers;
 
-use app\components\FrontendController;
+use app\models\Tree;
+use yii\web\Controller;
+use app\components\TreeControl;
 
-class SiteController extends FrontendController
+class SiteController extends Controller
 {
     public function actions()
     {
@@ -17,6 +19,13 @@ class SiteController extends FrontendController
 
     public function actionIndex()
     {
-        return $this->render('index');
+//        (new TreeCreator(1, 1))->createNode(); //create node
+
+//            $treeControl = new TreeControl();
+//        $treeControl->getChildNodes(182); //- get node children
+//        $treeControl->getParentNodes(134); // - get node parents
+
+//        (new TreeControl())->autocompleteTree(); //TODO redevelop method!!!!!
+        return $this->render('index', ['tree' => Tree::getTree()]);
     }
 }
