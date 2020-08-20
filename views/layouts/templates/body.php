@@ -1,22 +1,23 @@
 <?php
 
 
-/** @var $this \yii\web\View */
+/** @var $this View */
 /* @var $content string */
+
+use yii\web\View;
+
 ?>
 <body class="<?= (isset($this->context->bodyClass) ? $this->context->bodyClass : '') ?>">
 
-<div class="main-grid-wrapper">
+<?php $this->beginBody() ?>
 
-    <?php $this->beginBody() ?>
+<?= $this->render('//layouts/templates/body-templates/header') ?>
 
-    <?= $this->render('//layouts/templates/body-templates/header') ?>
-
-    <div class="content-wg">
-        <?= $content ?>
-    </div>
-
-    <?php $this->endBody() ?>
+<div class="container">
+    <?= $content ?>
 </div>
+
+<?php $this->endBody() ?>
+
 
 </body>

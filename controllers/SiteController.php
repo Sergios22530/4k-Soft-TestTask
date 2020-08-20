@@ -2,16 +2,17 @@
 
 namespace app\controllers;
 
-use app\models\Tree;
+use app\actions\forms\FormsHandlerAction;
+use app\models\forms\ContactForm;
 use yii\web\Controller;
-use app\components\TreeControl;
-use app\components\TreeCreator;
 
 class SiteController extends Controller
 {
     public function actions()
     {
         return [
+            'form1-handler' => ['class' => FormsHandlerAction::class, 'formProcess' => ContactForm::SCENARIO_FORM_1],
+            'form2-handler' => ['class' => FormsHandlerAction::class, 'formProcess' => ContactForm::SCENARIO_FORM_2],
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
@@ -20,13 +21,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-//        (new TreeCreator(1, 1))->createNode(); //create node
-
-//            $treeControl = new TreeControl();
-//        $treeControl->getChildNodes(182); //- get node children
-//        $treeControl->getParentNodes(134); // - get node parents
-
-//        (new TreeControl())->autoCompleteTree(); //autocomplete tree
-        return $this->render('index', ['tree' => Tree::getTree()]);
+        return $this->render('index');
     }
 }

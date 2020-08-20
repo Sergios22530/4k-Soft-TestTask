@@ -1,6 +1,9 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'domain' => 'http://kirchland.local'
+    'support' => [
+        'email' => 'example@gmail.com',
+        'password' => 'examplePassword'
+    ],
+    'adminEmail' => 'example-receiver@gmail.com'
 ];
