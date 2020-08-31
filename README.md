@@ -17,7 +17,7 @@ return [
 Установка YII2
 ------------
 ~~~
-1. git clone https://github.com/Sergios22530/UkrTech-TestTask.git .
+1. git clone https://github.com/Sergios22530/4k-Soft-TestTask.git .
 2. composer install
 3. Заходим в config/db.php - меняем конфигурацию базы данных на свою 
 4. php yii migrate/up - запускаем миграцию базы
